@@ -199,6 +199,10 @@ function setupUI() {
     logoImg.classList.remove("loaded");
     logoFallback.style.display = "flex";
   });
+
+  const heroLogo = document.getElementById("hero-logo");
+  heroLogo.addEventListener("load", () => heroLogo.classList.add("loaded"));
+  heroLogo.addEventListener("error", () => heroLogo.classList.remove("loaded"));
 }
 
 setupUI();

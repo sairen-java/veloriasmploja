@@ -11,21 +11,25 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background: linear-gradient(180deg, var(--sky-top), var(--sky-bottom));
+        background: radial-gradient(ellipse 60% 50% at 50% 0%, #14233b 0%, var(--bg) 70%);
         padding: 24px;
       }
       .status-card {
-        background: white;
+        background: var(--surface);
+        border: 1px solid var(--border);
         border-radius: var(--radius-lg);
         padding: 40px;
         max-width: 420px;
         width: 100%;
         text-align: center;
-        box-shadow: var(--shadow);
       }
       .status-icon {
-        font-size: 56px;
+        font-size: 48px;
         margin-bottom: 10px;
+      }
+      .status-card p {
+        color: var(--text-soft);
+        font-weight: 500;
       }
     </style>
   </head>

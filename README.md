@@ -64,9 +64,9 @@ Tudo está em `config/products.js`. Cada produto tem:
 
 ```js
 {
-  id: "vip-plus",       // identificador único, não mudar depois de já haver vendas
+  id: "aurora",         // identificador único, não mudar depois de já haver vendas
   category: "vip",      // "vip" ou "key"
-  name: "VIP+",
+  name: "Aurora",
   tagline: "...",
   price: 999,           // em cêntimos (999 = 9,99€)
   icon: "🌈",

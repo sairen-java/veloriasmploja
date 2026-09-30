@@ -30,7 +30,7 @@ const PRODUCTS = [
     tagline: "Mais conforto e liberdade para construir",
     price: 999,
     icon: "🌌",
-    color: "lavender",
+    color: "pink",
     popular: true,
     perks: [
       "Tag [Aurora] colorida no chat",

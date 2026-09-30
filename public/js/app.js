@@ -30,6 +30,21 @@ async function loadProducts() {
   renderProducts();
 }
 
+const ICONS = {
+  vip: '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18h18M4 18l-1-9 5 4 4-6 4 6 5-4-1 9"/></svg>',
+  key: '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="12" r="4"/><path d="M11 12h10M17 12v4M20 12v3"/></svg>',
+};
+
+const CHECK_ICON =
+  '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>';
+
+const RARITY_LABELS = {
+  "key-comum": "Comum",
+  "key-rara": "Raro",
+  "key-lendaria": "Lendário",
+  "key-veloria": "Exclusivo",
+};
+
 function renderProducts() {
   const vipGrid = document.getElementById("vip-grid");
   const keyGrid = document.getElementById("key-grid");
@@ -38,15 +53,18 @@ function renderProducts() {
 
   state.products.forEach((product) => {
     const card = document.createElement("div");
-    card.className = `card mc-panel color-${product.color}`;
-    const nameId = product.id === "key-veloria" ? ' id="key-veloria-name"' : "";
+    card.className = `card color-${product.color}`;
+    const rarity = RARITY_LABELS[product.id];
     card.innerHTML = `
       ${product.popular ? '<span class="card-badge">MAIS POPULAR</span>' : ""}
-      <div class="card-icon mc-slot">${product.icon}</div>
-      <h3${nameId}>${product.name}</h3>
+      <div class="card-top">
+        <div class="card-icon">${ICONS[product.category]}</div>
+        ${rarity ? `<span class="tier-badge">${rarity}</span>` : ""}
+      </div>
+      <h3>${product.name}</h3>
       <p class="tagline">${product.tagline}</p>
       <ul>
-        ${product.perks.map((perk) => `<li>${perk}</li>`).join("")}
+        ${product.perks.map((perk) => `<li><span class="icon">${CHECK_ICON}</span>${perk}</li>`).join("")}
       </ul>
       <div class="card-footer">
         <span class="price">${formatPrice(product.price)}</span>
@@ -106,8 +124,8 @@ function renderCart() {
     container.innerHTML = entries
       .map(
         ({ product, quantity }) => `
-        <div class="cart-item mc-slot">
-          <div class="icon">${product.icon}</div>
+        <div class="cart-item">
+          <div class="icon-box">${ICONS[product.category]}</div>
           <div class="details">
             <strong>${product.name}</strong>
             <span>${formatPrice(product.price)} cada</span>
@@ -184,10 +202,10 @@ function setupUI() {
 
   document.getElementById("copy-ip").addEventListener("click", (e) => {
     navigator.clipboard.writeText("play.veloriasmp.net");
-    const btn = e.target;
-    const original = btn.textContent;
-    btn.textContent = "Copiado!";
-    setTimeout(() => (btn.textContent = original), 1500);
+    const label = e.currentTarget.querySelector(".label");
+    const original = label.textContent;
+    label.textContent = "Copiado!";
+    setTimeout(() => (label.textContent = original), 1500);
   });
 
   const logoImg = document.getElementById("logo-img");

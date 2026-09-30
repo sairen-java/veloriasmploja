@@ -11,13 +11,12 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <div class="top-bar"></div>
     <header class="site-header">
       <div class="header-inner">
         <a href="#top" class="logo">
-          <img id="logo-img" class="logo-img" src="img/logo.png" alt="Veloria SMP" />
+          <img id="logo-img" class="logo-img" src="server-icon.png" alt="Veloria SMP" />
           <span class="logo-cube" id="logo-fallback">V</span>
-          <span class="logo-text">VELORIA <span>SMP</span></span>
+          <span class="wordmark">VELORIA <span>SMP</span></span>
         </a>
         <nav class="main-nav">
           <a href="#vips">Ranks</a>
@@ -25,14 +24,15 @@
           <a href="#info">Como Funciona</a>
         </nav>
         <button class="cart-btn" id="open-cart">
-          🛒 Carrinho <span class="cart-count" id="cart-count">0</span>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="18" cy="21" r="1"/><path d="M2.5 3h2l2.6 12.4a2 2 0 0 0 2 1.6h7.4a2 2 0 0 0 2-1.6L21 8H6"/></svg>
+          Carrinho <span class="cart-count" id="cart-count">0</span>
         </button>
       </div>
     </header>
 
     <section class="hero" id="top">
       <div class="hero-content">
-        <img id="hero-logo" class="hero-logo pixelated" src="img/logo.png" alt="Veloria SMP" />
+        <img id="hero-logo" class="hero-logo" src="server-icon.png" alt="Veloria SMP" />
         <span class="hero-badge"><span class="dot"></span> Loja oficial do servidor</span>
         <h1>A loja do <span>Veloria SMP</span></h1>
         <p>
@@ -40,17 +40,34 @@
           Pagamento seguro, entrega diretamente no servidor.
         </p>
         <div class="hero-actions">
-          <a href="#vips" class="btn mc-btn mc-btn-accent btn-primary">Ver Ranks</a>
-          <a href="#keys" class="btn mc-btn mc-btn-accent btn-secondary">Ver Caixas</a>
+          <a href="#vips" class="btn btn-primary">Ver Ranks</a>
+          <a href="#keys" class="btn btn-secondary">Ver Caixas</a>
         </div>
-        <div class="server-ip mc-panel">
-          <div class="server-icon"></div>
+        <div class="server-card">
+          <img class="server-icon" src="server-icon.png" alt="" />
           <div class="server-info">
-            <strong>Veloria SMP</strong>
-            <span>play.veloriasmp.net</span>
+            <span class="status"><span class="dot"></span> Online</span>
+            <code>play.veloriasmp.net</code>
           </div>
-          <span class="ping-bars"><i></i><i></i><i></i><i></i></span>
-          <button id="copy-ip">Copiar</button>
+          <button id="copy-ip">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            <span class="label">Copiar</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="trust-row">
+        <div class="trust-item">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
+          Pagamento seguro via Stripe
+        </div>
+        <div class="trust-item">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg>
+          Entrega automática
+        </div>
+        <div class="trust-item">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.35 0-2.62-.32-3.74-.9L3 21l1.9-5.76A8.5 8.5 0 1 1 21 11.5z"/></svg>
+          Suporte no Discord
         </div>
       </div>
     </section>
@@ -77,23 +94,29 @@
       </div>
     </section>
 
-    <div class="info-strip mc-panel" id="info">
+    <div class="info-strip" id="info">
       <div class="info-item">
-        <span class="emoji">💳</span>
+        <span class="icon-badge">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
+        </span>
         <div>
           <h4>Pagamento seguro</h4>
           <p>Processado pela Stripe. Não guardamos dados do teu cartão.</p>
         </div>
       </div>
       <div class="info-item">
-        <span class="emoji">⚡</span>
+        <span class="icon-badge">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg>
+        </span>
         <div>
           <h4>Entrega rápida</h4>
           <p>Depois de confirmado o pagamento, a tua compra é entregue no servidor.</p>
         </div>
       </div>
       <div class="info-item">
-        <span class="emoji">💬</span>
+        <span class="icon-badge">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.35 0-2.62-.32-3.74-.9L3 21l1.9-5.76A8.5 8.5 0 1 1 21 11.5z"/></svg>
+        </span>
         <div>
           <h4>Suporte no Discord</h4>
           <p>Alguma dúvida ou problema? A nossa equipa está sempre por perto.</p>
@@ -103,8 +126,9 @@
 
     <footer class="site-footer">
       <div class="footer-inner">
-        <div class="logo-text" style="justify-content: center; display: flex; gap: 6px">
-          VELORIA<span>SMP</span>
+        <div class="footer-logo">
+          <span class="logo-cube">V</span>
+          <span class="wordmark">VELORIA<span> SMP</span></span>
         </div>
         <div class="footer-links">
           <a href="#top">Início</a>
@@ -120,9 +144,9 @@
     </footer>
 
     <div class="cart-overlay" id="cart-overlay"></div>
-    <aside class="cart-drawer mc-panel" id="cart-drawer">
+    <aside class="cart-drawer" id="cart-drawer">
       <div class="cart-header">
-        <h3 class="pixel">🛒 Carrinho</h3>
+        <h3>O teu carrinho</h3>
         <button class="cart-close" id="close-cart">✕</button>
       </div>
       <div class="cart-items" id="cart-items">
@@ -133,7 +157,7 @@
           <span>Total</span>
           <span id="cart-total">0,00€</span>
         </div>
-        <button class="btn mc-btn mc-btn-accent btn-primary" id="checkout-btn" style="width: 100%; justify-content: center">
+        <button class="btn btn-primary" id="checkout-btn" style="width: 100%; justify-content: center">
           Finalizar Compra
         </button>
         <p class="checkout-note">

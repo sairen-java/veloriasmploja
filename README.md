@@ -10,7 +10,7 @@ Loja online para o servidor de Minecraft **Veloria SMP**, para vender **ranks VI
 - Recolha do **nick de Minecraft** diretamente no checkout da Stripe
 - Webhook que regista as encomendas pagas em `data/orders.json`
 - Endpoints de admin para consultar/marcar encomendas como entregues (para ligar a um plugin do servidor, por exemplo)
-- Visual em tema céu/arco-íris pastel, a condizer com o logo do servidor
+- Visual escuro e profissional (azul-marinho + dourado), com o logo real do servidor
 
 ## Estrutura do projeto
 
@@ -80,10 +80,7 @@ Basta editar este ficheiro e reiniciar o servidor — não é preciso tocar em m
 
 ## Logo do servidor
 
-O cabeçalho tenta carregar `public/img/logo.png`. Se não existir, mostra automaticamente um logo alternativo em texto/emoji (não parte nada). Para usares o teu logo real (o do céu com o axolote, o creeper e o porquinho):
-
-1. Guarda a imagem como `public/img/logo.png` (idealmente quadrada, ex: 256x256).
-2. Recarrega a página — o logo aparece automaticamente no cabeçalho.
+O cabeçalho, o hero e o cartão do servidor carregam `public/server-icon.png`. Se o ficheiro não existir, o cabeçalho mostra automaticamente um símbolo alternativo (não parte nada). Para trocar o logo, basta substituir esse ficheiro (idealmente quadrado, ex: 256x256) e recarregar a página.
 
 ## Entrega dos VIPs/Keys no servidor
 

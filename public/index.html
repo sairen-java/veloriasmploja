@@ -31,12 +31,8 @@
     </header>
 
     <section class="hero" id="top">
-      <div class="glow glow-1"></div>
-      <div class="glow glow-2"></div>
-      <div class="glow glow-3"></div>
-
       <div class="hero-content">
-        <img id="hero-logo" class="hero-logo" src="img/logo.png" alt="Veloria SMP" />
+        <img id="hero-logo" class="hero-logo pixelated" src="img/logo.png" alt="Veloria SMP" />
         <span class="hero-badge"><span class="dot"></span> Loja oficial do servidor</span>
         <h1>A loja do <span>Veloria SMP</span></h1>
         <p>
@@ -44,11 +40,16 @@
           Pagamento seguro, entrega diretamente no servidor.
         </p>
         <div class="hero-actions">
-          <a href="#vips" class="btn btn-primary">Ver Ranks</a>
-          <a href="#keys" class="btn btn-secondary">Ver Caixas</a>
+          <a href="#vips" class="btn mc-btn mc-btn-accent btn-primary">Ver Ranks</a>
+          <a href="#keys" class="btn mc-btn mc-btn-accent btn-secondary">Ver Caixas</a>
         </div>
-        <div class="server-ip">
-          <span>IP: <strong>play.veloriasmp.net</strong></span>
+        <div class="server-ip mc-panel">
+          <div class="server-icon"></div>
+          <div class="server-info">
+            <strong>Veloria SMP</strong>
+            <span>play.veloriasmp.net</span>
+          </div>
+          <span class="ping-bars"><i></i><i></i><i></i><i></i></span>
           <button id="copy-ip">Copiar</button>
         </div>
       </div>
@@ -76,7 +77,7 @@
       </div>
     </section>
 
-    <div class="info-strip" id="info">
+    <div class="info-strip mc-panel" id="info">
       <div class="info-item">
         <span class="emoji">💳</span>
         <div>
@@ -119,9 +120,9 @@
     </footer>
 
     <div class="cart-overlay" id="cart-overlay"></div>
-    <aside class="cart-drawer" id="cart-drawer">
+    <aside class="cart-drawer mc-panel" id="cart-drawer">
       <div class="cart-header">
-        <h3>🛒 O teu carrinho</h3>
+        <h3 class="pixel">🛒 Carrinho</h3>
         <button class="cart-close" id="close-cart">✕</button>
       </div>
       <div class="cart-items" id="cart-items">
@@ -132,7 +133,7 @@
           <span>Total</span>
           <span id="cart-total">0,00€</span>
         </div>
-        <button class="btn btn-primary" id="checkout-btn" style="width: 100%; justify-content: center">
+        <button class="btn mc-btn mc-btn-accent btn-primary" id="checkout-btn" style="width: 100%; justify-content: center">
           Finalizar Compra
         </button>
         <p class="checkout-note">

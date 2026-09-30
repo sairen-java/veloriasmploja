@@ -38,11 +38,12 @@ function renderProducts() {
 
   state.products.forEach((product) => {
     const card = document.createElement("div");
-    card.className = `card color-${product.color}`;
+    card.className = `card mc-panel color-${product.color}`;
+    const nameId = product.id === "key-veloria" ? ' id="key-veloria-name"' : "";
     card.innerHTML = `
       ${product.popular ? '<span class="card-badge">MAIS POPULAR</span>' : ""}
-      <div class="card-icon">${product.icon}</div>
-      <h3>${product.name}</h3>
+      <div class="card-icon mc-slot">${product.icon}</div>
+      <h3${nameId}>${product.name}</h3>
       <p class="tagline">${product.tagline}</p>
       <ul>
         ${product.perks.map((perk) => `<li>${perk}</li>`).join("")}
@@ -105,7 +106,7 @@ function renderCart() {
     container.innerHTML = entries
       .map(
         ({ product, quantity }) => `
-        <div class="cart-item">
+        <div class="cart-item mc-slot">
           <div class="icon">${product.icon}</div>
           <div class="details">
             <strong>${product.name}</strong>

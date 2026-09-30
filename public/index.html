@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loja Veloria SMP — VIPs e Keys</title>
+    <meta
+      name="description"
+      content="Loja oficial do Veloria SMP: compra ranks VIP e Keys para melhorares a tua aventura no servidor."
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="#top" class="logo">
+          <img id="logo-img" class="logo-img" src="img/logo.png" alt="Veloria SMP" />
+          <span class="logo-cube" id="logo-fallback">🐷</span>
+          <span class="logo-text">VELORIA<span> SMP</span></span>
+        </a>
+        <nav class="main-nav">
+          <a href="#vips">VIPs</a>
+          <a href="#keys">Keys</a>
+          <a href="#info">Como Funciona</a>
+        </nav>
+        <button class="cart-btn" id="open-cart">
+          🛒 Carrinho <span class="cart-count" id="cart-count">0</span>
+        </button>
+      </div>
+    </header>
+
+    <section class="hero" id="top">
+      <div class="rainbow-arc"></div>
+      <div class="cloud cloud-1"></div>
+      <div class="cloud cloud-2"></div>
+      <div class="cloud cloud-3"></div>
+
+      <div class="hero-content">
+        <span class="hero-badge">✨ Loja Oficial do Servidor</span>
+        <h1>A loja do <span>Veloria SMP</span></h1>
+        <p>
+          Ranks VIP e Keys para deixares a tua aventura ainda mais colorida.
+          Compra em segurança e recebe tudo diretamente no servidor.
+        </p>
+        <div class="hero-actions">
+          <a href="#vips" class="btn btn-primary">👑 Ver VIPs</a>
+          <a href="#keys" class="btn btn-secondary">🗝️ Ver Keys</a>
+        </div>
+        <div class="server-ip">
+          <span>IP: play.veloriasmp.net</span>
+          <button id="copy-ip">Copiar</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="vips">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-icon">👑</span>
+          <h2>Ranks VIP</h2>
+          <p>Benefícios permanentes para tornar a tua jornada mais confortável.</p>
+        </div>
+        <div class="grid" id="vip-grid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="keys" style="padding-top: 0">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-icon">🗝️</span>
+          <h2>Keys</h2>
+          <p>Abre crates e desbloqueia recompensas exclusivas.</p>
+        </div>
+        <div class="grid" id="key-grid"></div>
+      </div>
+    </section>
+
+    <div class="info-strip" id="info">
+      <div class="info-item">
+        <span class="emoji">💳</span>
+        <div>
+          <h4>Pagamento seguro</h4>
+          <p>Processado pela Stripe. Não guardamos dados do teu cartão.</p>
+        </div>
+      </div>
+      <div class="info-item">
+        <span class="emoji">⚡</span>
+        <div>
+          <h4>Entrega rápida</h4>
+          <p>Depois de confirmado o pagamento, a tua compra é entregue no servidor.</p>
+        </div>
+      </div>
+      <div class="info-item">
+        <span class="emoji">💬</span>
+        <div>
+          <h4>Suporte no Discord</h4>
+          <p>Alguma dúvida ou problema? A nossa equipa está sempre por perto.</p>
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="rainbow-line" style="margin: -40px -24px 0"></div>
+      <div class="footer-inner">
+        <div class="logo-text" style="justify-content: center; display: flex; gap: 6px">
+          VELORIA<span style="color: #ffd08a">SMP</span>
+        </div>
+        <div class="footer-links">
+          <a href="#top">Início</a>
+          <a href="#vips">VIPs</a>
+          <a href="#keys">Keys</a>
+          <a href="#" id="discord-link">Discord</a>
+        </div>
+        <p class="footer-small">
+          Veloria SMP não é afiliado à Mojang ou Microsoft. Todos os pagamentos
+          são processados de forma segura pela Stripe.
+        </p>
+      </div>
+    </footer>
+
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <aside class="cart-drawer" id="cart-drawer">
+      <div class="cart-header">
+        <h3>🛒 O teu carrinho</h3>
+        <button class="cart-close" id="close-cart">✕</button>
+      </div>
+      <div class="cart-items" id="cart-items">
+        <p class="cart-empty">O carrinho está vazio por agora.</p>
+      </div>
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>Total</span>
+          <span id="cart-total">0,00€</span>
+        </div>
+        <button class="btn btn-primary" id="checkout-btn" style="width: 100%; justify-content: center">
+          Finalizar Compra
+        </button>
+        <p class="checkout-note">
+          Vais indicar o teu nick de Minecraft durante o pagamento na Stripe.
+        </p>
+      </div>
+    </aside>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+node_modules/
+.env
+.DS_Store
+npm-debug.log*
+
+# Base de dados local de encomendas (contém dados de clientes) - não deve ir para o git
+data/orders.json
